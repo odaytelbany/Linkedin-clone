@@ -1,0 +1,41 @@
+.feed{
+    flex: 0.6;
+    margin: 0 20px;
+}
+
+.feed_inputContainer{
+    background: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.feed_input{
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    display: flex;
+    color: gray;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.feed_input > form{
+    display: flex;
+    width: 100%;
+}
+.feed_input > form > input{
+    flex: 1;
+    margin-left: 10px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
+.feed_input > form > button{
+    display: none;
+}
+
+.feed_inputOptions{
+    display: flex;
+    justify-content: space-evenly;
+}
