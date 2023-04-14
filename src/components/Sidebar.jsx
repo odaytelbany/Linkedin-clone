@@ -15,7 +15,7 @@ function Sidebar() {
     <div className='sidebar'>
         <div className="sidebar_top">
             <img src="https://images.unsplash.com/photo-1680978560866-481aff9fd6f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />    
-            <Avatar className='sidebar_avatar'/>
+            <Avatar className='sidebar_avatar' src="https://yt3.ggpht.com/yti/AHyvSCBP5UA-A0NzowCE7zVME-z-yuwXaJVLohCLIpvnmw=s108-c-k-c0x00ffffff-no-rj"/>
             <h2>Oday telbany</h2>
             <h4>odaytelbany@gmail.com</h4>
         </div>

@@ -27,7 +27,7 @@ function Header() {
           <HeaderOption title={"Jobs"} Icon={BusinessCenterIcon}/>
           <HeaderOption title={"Messaging"} Icon={ChatIcon}/>
           <HeaderOption title={"Notifications"} Icon={NotificationsIcon}/>
-          <HeaderOption title={"Me"} avatar="https://yt3.ggpht.com/yti/AHXOFjXMQ5SoDF0vkckfwctKAqsxBxbiYikfIgapHN8I1g=s108-c-k-c0x00ffffff-no-rj"/>
+          <HeaderOption title={"Me"} avatar="https://yt3.ggpht.com/yti/AHyvSCBP5UA-A0NzowCE7zVME-z-yuwXaJVLohCLIpvnmw=s108-c-k-c0x00ffffff-no-rj"/>
       </div>
     </div>
   )
