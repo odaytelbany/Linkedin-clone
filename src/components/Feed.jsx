@@ -7,6 +7,7 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import CalenderViewDayIcon from "@mui/icons-material/CalendarViewDayRounded";
 import InputOption from "./InputOption";
 import Post from "./Post";
+import FlipMove from "react-flip-move";
 // firebase
 // import 'firebase/firestore';
 import {
@@ -18,11 +19,14 @@ import {
   orderBy
 } from "firebase/firestore";
 import { db, auth } from "../config/firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
 
 function Feed() {
   const [message, setMessage] = useState("");
   const [posts, setPosts] = useState([]);
   const postsCollection = collection(db, "Posts");
+  const user = useSelector(selectUser).user;
 
 
   const getPosts = () => {
@@ -45,9 +49,9 @@ function Feed() {
   const sendPost = (e) => {
     e.preventDefault();
     addDoc(postsCollection, {
-      name: "oday",
+      name: user.displayName,
       description: "web developer",
-      photoUrl: "",
+      photoUrl: user.photoURL,
       message: message,
       timestamp: serverTimestamp(),
     });
@@ -84,20 +88,22 @@ function Feed() {
         </div>
       </div>
 
-      {
-        // view posts
-        posts.map((post) => {
-          return (
-            <Post
-              key={post.id}
-              name={post.name}
-              description={post.description}
-              message={post.message}
-              photoUrl={post.photoUrl}
-            />
-          );
-        })
-      }
+        <FlipMove>
+          {
+            posts.map((post) => {
+              return (
+                <Post
+                  key={post.id}
+                  name={post.name}
+                  description={post.description}
+                  message={post.message}
+                  photoUrl={post.photoUrl}
+                />
+              );
+            })
+          }
+        </FlipMove>
+        
     </div>
   );
 }

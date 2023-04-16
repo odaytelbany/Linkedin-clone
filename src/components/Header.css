@@ -8,6 +8,7 @@
     border-bottom: 0.1px solid lightgray;
     width: 100%;
     background-color: white;
+    z-index: 1000;
 }
 
 .header_left{
@@ -27,6 +28,7 @@
     height: 22px;
     color: gray;
     background: #eef3f8;
+    height: 100%
 }
 
 .header_search > input{

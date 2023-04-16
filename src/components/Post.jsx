@@ -1,4 +1,5 @@
 import './Post.css'
+import React,{ forwardRef } from 'react';
 import InputOption from './InputOption';
 // material ui icons
 import { Avatar } from '@mui/material'
@@ -8,13 +9,16 @@ import ShareIcon from "@mui/icons-material/Share"
 import SendIcon from "@mui/icons-material/SendOutlined"
 // firebase
 import { getDocs, collection, addDoc, deleteDoc, doc } from "firebase/firestore";
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 
 
-function Post({ name, description, message, photoUrl }) {
+const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
+    const user = useSelector(selectUser).user;
   return (
-    <div className="post">
+    <div ref={ref} className="post">
         <div className="post_header">
-            <Avatar src={photoUrl}/>
+            <Avatar src={photoUrl}> {name[0]} </Avatar>
             <div className="post_info">
                 <h2>{name}</h2>
                 <p>{description}</p>
@@ -33,6 +37,6 @@ function Post({ name, description, message, photoUrl }) {
         </div>
     </div>
   )
-}
+})
 
 export default Post
